@@ -1,0 +1,303 @@
+version: "3"
+
+services:
+  portainer:
+    image: portainer/portainer:latest
+    ports:
+      - "9000:9000"
+    volumes:
+      - portainer_data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
+  clef-1:
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - clef-1:/app/data
+    command: full
+  clef-2:
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - clef-2:/app/data
+    command: full
+  clef-3:
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - clef-3:/app/data
+    command: full
+  clef-4:
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - clef-4:/app/data
+    command: full
+  clef-5:
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - clef-5:/app/data
+    command: full
+  clef-6:
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - clef-6:/app/data
+    command: full
+  clef-7:
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - clef-7:/app/data
+    command: full
+  clef-8:
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - clef-8:/app/data
+    command: full
+  clef-9:
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - clef-9:/app/data
+    command: full
+  clef-10:
+    image: ethersphere/clef:latest
+    restart: unless-stopped
+    environment:
+      - CLEF_CHAINID=5
+    volumes:
+      - clef-10:/app/data
+    command: full
+  bee-1:
+    image: ethersphere/bee:latest
+    restart: unless-stopped
+    environment:
+      - BEE_WELCOME_MESSAGE="LWQ Bzzzzzzz"
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-1:8550
+      - BEE_PASSWORD=yingyingdefeng01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+    ports:
+      - "10133:1633"
+      - "10134:1634"
+      - "10135:1635"
+    volumes:
+      - bee-1:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-1
+  bee-2:
+    image: ethersphere/bee:latest
+    restart: unless-stopped
+    environment:
+      - BEE_WELCOME_MESSAGE="LWQ Bzzzzzzz"
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-2:8550
+      - BEE_PASSWORD=yingyingdefeng01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+    ports:
+      - "10233:1633"
+      - "10234:1634"
+      - "10235:1635"
+    volumes:
+      - bee-2:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-2
+  bee-3:
+    image: ethersphere/bee:latest
+    restart: unless-stopped
+    environment:
+      - BEE_WELCOME_MESSAGE="LWQ Bzzzzzzz"
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-3:8550
+      - BEE_PASSWORD=yingyingdefeng01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+    ports:
+      - "10333:1633"
+      - "10334:1634"
+      - "10335:1635"
+    volumes:
+      - bee-3:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-3
+  bee-4:
+    image: ethersphere/bee:latest
+    restart: unless-stopped
+    environment:
+      - BEE_WELCOME_MESSAGE="LWQ Bzzzzzzz"
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-4:8550
+      - BEE_PASSWORD=yingyingdefeng01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+    ports:
+      - "10433:1633"
+      - "10434:1634"
+      - "10435:1635"
+    volumes:
+      - bee-4:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-4
+  bee-5:
+    image: ethersphere/bee:latest
+    restart: unless-stopped
+    environment:
+      - BEE_WELCOME_MESSAGE="LWQ Bzzzzzzz"
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-5:8550
+      - BEE_PASSWORD=yingyingdefeng01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+    ports:
+      - "10533:1633"
+      - "10534:1634"
+      - "10535:1635"
+    volumes:
+      - bee-5:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-5
+  bee-6:
+    image: ethersphere/bee:latest
+    restart: unless-stopped
+    environment:
+      - BEE_WELCOME_MESSAGE="LWQ Bzzzzzzz"
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-6:8550
+      - BEE_PASSWORD=yingyingdefeng01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+    ports:
+      - "10633:1633"
+      - "10634:1634"
+      - "10635:1635"
+    volumes:
+      - bee-6:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-6
+  bee-7:
+    image: ethersphere/bee:latest
+    restart: unless-stopped
+    environment:
+      - BEE_WELCOME_MESSAGE="LWQ Bzzzzzzz"
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-7:8550
+      - BEE_PASSWORD=yingyingdefeng01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+    ports:
+      - "10733:1633"
+      - "10734:1634"
+      - "10735:1635"
+    volumes:
+      - bee-7:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-7
+  bee-8:
+    image: ethersphere/bee:latest
+    restart: unless-stopped
+    environment:
+      - BEE_WELCOME_MESSAGE="LWQ Bzzzzzzz"
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-8:8550
+      - BEE_PASSWORD=yingyingdefeng01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+    ports:
+      - "10833:1633"
+      - "10834:1634"
+      - "10835:1635"
+    volumes:
+      - bee-8:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-8
+  bee-9:
+    image: ethersphere/bee:latest
+    restart: unless-stopped
+    environment:
+      - BEE_WELCOME_MESSAGE="LWQ Bzzzzzzz"
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-9:8550
+      - BEE_PASSWORD=yingyingdefeng01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+    ports:
+      - "10933:1633"
+      - "10934:1634"
+      - "10935:1635"
+    volumes:
+      - bee-9:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-9
+  bee-10:
+    image: ethersphere/bee:latest
+    restart: unless-stopped
+    environment:
+      - BEE_WELCOME_MESSAGE="LWQ Bzzzzzzz"
+      - BEE_DEBUG_API_ENABLE=true
+      - BEE_CLEF_SIGNER_ENABLE=true
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-10:8550
+      - BEE_PASSWORD=yingyingdefeng01
+      - BEE_SWAP_ENDPOINT=https://rpc.slock.it/goerli
+    ports:
+      - "11033:1633"
+      - "11034:1634"
+      - "11035:1635"
+    volumes:
+      - bee-10:/home/bee/.bee
+    command: start
+    depends_on:
+      - clef-10
+volumes:
+  portainer_data:
+  clef-1:
+  clef-2:
+  clef-3:
+  clef-4:
+  clef-5:
+  clef-6:
+  clef-7:
+  clef-8:
+  clef-9:
+  clef-10:
+  bee-1:
+  bee-2:
+  bee-3:
+  bee-4:
+  bee-5:
+  bee-6:
+  bee-7:
+  bee-8:
+  bee-9:
+  bee-10:
